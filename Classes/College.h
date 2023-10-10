@@ -15,7 +15,7 @@ class College
     int students;
 
 public:
-    College(string _college_name, string _college_location, int _students)
+    College(const string &_college_name, const string &_college_location, int _students)
     {
         college_name = _college_name;
         college_location = _college_location;
