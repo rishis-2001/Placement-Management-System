@@ -129,7 +129,7 @@ public:
         cout << "Successfully added a new company in records" << endl;
     }
 
-    void show_companies() {
+    void show_companies() const {
         int index = 1;
 
         cout << "\t\t\t\t\t\t\t|| LIST OF COMPANIES ||" << endl << endl;
