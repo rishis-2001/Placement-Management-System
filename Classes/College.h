@@ -136,12 +136,13 @@ public:
         cout << "\t\t\t-------------------------------------------------------------------------------------------------------" << endl << endl;
 
         for (const string &company : college_companies) {
-            cout << "\t\t\t" << index++ << ". " << company << endl;
+            cout << "\t\t\t" << index << ". " << company << endl;
+            index++;
         }
     }
 
     struct less_than_key {
-        inline bool operator()(const Placement &struct1, const Placement &struct2) {
+        inline bool operator()(const Placement &struct1, const Placement &struct2) const {
             return (struct1.year < struct2.year);
         }
     };
