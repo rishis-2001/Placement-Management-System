@@ -25,7 +25,8 @@ void Student_Details_Menu (vector <Student> &Students){
             cout<<Students[index-1];
             break;
         case 2:
-            int index1,index2;
+            int index1;
+            int index2;
             cout<<"Enter the serial number of the students whom you want to compare: ";
             cin>>index1>>index2;
             cout<<"Result: ";
@@ -50,7 +51,7 @@ void Student_Details_Menu (vector <Student> &Students){
      
 }
 
-void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
+void Company_Details_Menu(vector<Company> &Companies){
 
 
     int selected_company = 0;
@@ -82,8 +83,10 @@ void Company_Details_Menu(vector<Company> &Companies,vector<College> &Colleges){
         //based on the selected option
         switch(offer){
             case 1: 
-                int choice, owner;
-                Companies[selected_company - 1].display_job(owner=1);
+                int choice;
+                int owner;
+                owner = 1;
+                Companies[selected_company - 1].display_job(owner);
                 cout<<"\n"<<endl;
                 cout<<"\t\t\t============================================================================"<<endl;
                 cout <<"\nEnter serial number of the job to see/edit in detail\n(0 if you wish to skip/add/delete a job): ";
@@ -176,7 +179,7 @@ void Company_Menu(vector<Company> &Companies,vector<College> &Colleges,vector <S
             Student_Details_Menu(Students);
             break;
         case 2:
-            Company_Details_Menu(Companies, Colleges);
+            Company_Details_Menu(Companies);
             break;
         case 3:
             display_thank_you();
