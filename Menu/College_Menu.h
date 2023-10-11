@@ -8,7 +8,8 @@
 void College_Menu(vector<College> &Colleges)
 {
     bool flag=true;
-        int choice, choice1;
+        int choice;
+        int choice1;
         display_college_list(Colleges);
         cout<<"Enter the serial number of your college: ";
         cin>>choice;
