@@ -17,32 +17,26 @@ class Student{
         double cgpa;
         int program_count;
         vector <Program*> programs;
+
     public:
-        Student(string _roll_number, string _name, int _age, string _college, string _course, int _course_duration, double _cgpa, int _program_count,Program *p)
-        {
-            roll_number = _roll_number;
-            name = _name;
-            age = _age;
-            college = _college;
-            course = _course;
-            course_duration = _course_duration;
-            cgpa = _cgpa;
-            program_count = _program_count;
+        Student(string &_roll_number, string &_name, int _age, string &_college, string &_course, int _course_duration, double _cgpa, int _program_count, Program *p)
+        : roll_number(_roll_number), name(_name), age(_age), college(_college), course(_course), course_duration(_course_duration), cgpa(_cgpa), program_count(_program_count) {
             programs.push_back(p);
         }
-    void set_roll_number(string _roll_number)
+
+    void set_roll_number(string &_roll_number)
     {
         roll_number = _roll_number;
     }
-    void set_name(string _name)
+    void set_name(string &_name)
     {
         name = _name;
     }
-    void set_college(string _college)
+    void set_college(string &_college)
     {
         college = _college;
     }
-    void set_course(string _course)
+    void set_course(string &_course)
     {
         course = _course;
     }
@@ -63,36 +57,35 @@ class Student{
         cgpa = _cgpa;
     }
 
-    string get_roll_number()
-    {
+    string get_roll_number() const {
         return roll_number;
     }
-    string get_name()
-    {
+
+    string get_name() const {
         return name;
     }
-    string get_college()
-    {
+
+    string get_college() const {
         return college;
     }
-    string get_course()
-    {
+
+    string get_course() const {
         return course;
     }
-    int get_age()
-    {
+
+    int get_age() const {
         return age;
     }
-    int get_course_duration()
-    {
+
+    int get_course_duration() const {
         return course_duration;
     }
-    int get_program_count()
-    {
+
+    int get_program_count() const {
         return program_count;
     }
-    double get_cgpa()
-    {
+
+    double get_cgpa() const {
         return cgpa;
     }
 
@@ -100,8 +93,10 @@ class Student{
     {
 
         bool flag = true;
-        string name, type; 
-        int seats,duration ;
+        string name;
+        string type; 
+        int seats;
+        int duration ;
         char c;
         cout << "  Enter the program details which you want to add:" << endl;
 
@@ -117,7 +112,7 @@ class Student{
             cin >> duration;
             cout << "  Do you want to add more programs? (y/n): ";
             cin >> c;
-            Program *prog = new Program(name,type,seats,duration);
+            Program *prog = new Program(name, type, seats, duration);
             programs.push_back(prog);
             if (c == 'n')
             {
@@ -142,7 +137,7 @@ class Student{
 
     friend void delete_student(vector<Student> &student, string roll);
     friend ostream &operator<<(ostream &out, Student &);
-    friend bool operator>(Student &, Student &);
+    friend bool operator>(const Student &, const Student &);
     friend void display_students(vector<Student> &Students);
 };
 
@@ -160,7 +155,7 @@ ostream &operator<<(ostream &out, Student &student)
     return out;
 }
 
-bool operator>(Student &student1, Student &student2)
+bool operator>(const Student &student1, const Student &student2)
 {
 
     //Compare on basis of CGPA
@@ -203,7 +198,7 @@ bool operator>(Student &student1, Student &student2)
         return false;
     }
 }
-void delete_student(vector<Student> &programs, string roll)
+void delete_student(vector<Student> &programs, string &roll)
 {
     for (int i = 0; i < programs.size(); i++)
     {
