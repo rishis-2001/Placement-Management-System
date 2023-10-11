@@ -34,43 +34,43 @@ public:
     string get_branch() const { return company_branch; }
     int get_total_offers() const { return total_offers; }
 
-    void append_job() {
+    void append_job() const {
         // Implementation for appending a job
         // ...
     }
 
-    void append_internship() {
+    void append_internship() const {
         // Implementation for appending an internship
         // ...
     }
 
-    void delete_job() {
+    void delete_job() const {
         // Implementation for deleting a job
         // ...
     }
 
-    void delete_internship() {
+    void delete_internship() const {
         // Implementation for deleting an internship
         // ...
     }
 
-    void update_job_salary(int choice) {
+    void update_job_salary(int choice) const {
         // Implementation for updating a job's salary
         // ...
     }
 
-    void update_internship_salary(int choice) {
+    void update_internship_salary(int choice) const {
         // Implementation for updating an internship's salary
         // ...
     }
 
     // Display functions
-    void display_internship(int owner = 0) {
+    void display_internship(int owner = 0) const {
         // Implementation for displaying internships
         // ...
     }
 
-    void display_job(int owner = 0) {
+    void display_job(int owner = 0) const {
         // Implementation for displaying jobs
         // ...
     }
