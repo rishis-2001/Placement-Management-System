@@ -7,7 +7,7 @@ using namespace std;
 
 class Offer
 {
-protected:
+private:
     int amount;
     string location;
     string type;
@@ -18,27 +18,27 @@ public:
         amount = _amount;
     }
 
-    void set_location(string _location)
+    void set_location(const string &_location)
     {
         location = _location;
     }
 
-    void set_type(string _type)
+    void set_type(const string &_type)
     {
         type = _type;
     }
-    int get_amount()
-    {
+    int get_amount() const {
         return amount;
     }
-    string get_location()
-    {
+
+    string get_location() const {
         return location;
     }
-    string get_type()
-    {
+
+    string get_type() const {
         return type;
     }
+    
     friend class Company;
 };
 
