@@ -8,12 +8,13 @@ class Placement
     double average;
     double highest;
 
-    int year,total_placed;
+    int year;
+    int total_placed;
     int total_appeared;
 
     public: 
     Placement(int year, double average, int highest, int total_placed, int total_appeared)
-    : year(year), average(average), highest(highest), total_placed(total_placed), total_appeared(total_appeared)
+    : average(average), highest(highest), year(year), total_placed(total_placed), total_appeared(total_appeared)
     {
     // The constructor body is now empty because the members are initialized in the initialization list.
     }
