@@ -202,7 +202,7 @@ void delete_student(vector<Student> &programs, string &roll)
 {
     for (int i = 0; i < programs.size(); i++)
     {
-        if (programs[i].roll_number == roll)
+        if (programs[i].get_roll_number() == roll)
         {
             for (int j = i; j < programs.size() - 1; j++)
             {
