@@ -22,16 +22,15 @@ public:
         program_count = _program_count;
     }
 
-    int get_program_count()
-    {
+    int get_program_count() const {
         return program_count;
     }
 
     friend class Company;
-    friend ostream &operator<<(ostream &out, Internship &internship);
+    friend ostream &operator<<(ostream &out, const Internship &internship);
 };
 
-ostream &operator<<(ostream &out, Internship &internship)
+ostream &operator<<(ostream &out, const Internship &internship)
 {
     out << "\t\t\t\t\t|| INTERNSHIP DETAILS ||" << endl;
     out << "  Amount: " << internship.amount << endl;
