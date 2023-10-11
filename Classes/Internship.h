@@ -8,7 +8,7 @@ private:
     int program_count;
 
 public:
-    Internship(int _amount, string _location, string _type, string _role, int _program_count)
+    Internship(int _amount, string &_location, string &_type, string &_role, int _program_count)
     {
         amount = _amount;
         location = _location;
