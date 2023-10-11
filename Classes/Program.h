@@ -7,34 +7,28 @@ using namespace std;
 class Program
 {
 private:
-    string name, type;
-    int duration, seats;
+    string name;
+    string type;
+    int duration;
+    int seats;
 
 public:
-    Program(string _program_name, string _type,int _seats,  int _duration )
-    {
-        name = _program_name;
-        duration = _duration;
-        type = _type;
-        seats=_seats;
-    }
-    string get_name()
-    {
+    Program(string &_program_name, string &_type, int _seats,  int _duration )
+    : name(_program_name), type(_type), duration(_duration), seats(_seats) {}
+    
+    string get_name() const {
         return name;
     }
 
-    int get_duration()
-    {
+    int get_duration() const {
         return duration;
     }
 
-    string get_type()
-    {
+    string get_type() const {
         return type;
     }
 
-    int get_seats()
-    {
+    int get_seats() const {
         return seats;
     }
 
@@ -43,12 +37,12 @@ public:
         seats = _seats;
     }
 
-    void set_type(string _type)
+    void set_type(string &_type)
     {
         type = _type;
     }
 
-    void set_name(string _name)
+    void set_name(string &_name)
     {
         name = _name;
     }
@@ -59,10 +53,10 @@ public:
     }
 
     friend class Student;
-    friend ostream& operator<<(ostream&, Program& program);
+    friend ostream& operator<<(ostream&, const Program& program);
 };
 
-ostream& operator<<(ostream& out,Program& program){
+ostream& operator<<(ostream& out, const Program& program){
     out<<"\t || PROGRAM DETAILS ||"<<endl;
     out<<"Program Name: "<<program.name<<endl;
     out<<"Program Type: "<<program.type<<endl;
