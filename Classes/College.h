@@ -34,7 +34,7 @@ public:
         };
     }
 
-    string const get_name() {
+    string get_name() const {
         return college_name;
     }
 
@@ -50,11 +50,11 @@ public:
         students = _students;
     }
 
-    int const get_students() {
+    int get_students() const {
         return students;
     }
 
-    string const get_location() {
+    string get_location() const {
         return college_location;
     }
 
