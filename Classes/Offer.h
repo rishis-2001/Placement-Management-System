@@ -18,12 +18,12 @@ public:
         amount = _amount;
     }
 
-    void set_location(const string &_location)
+    void set_location(string &_location)
     {
         location = _location;
     }
 
-    void set_type(const string &_type)
+    void set_type(string &_type)
     {
         type = _type;
     }
@@ -38,7 +38,7 @@ public:
     string get_type() const {
         return type;
     }
-    
+
     friend class Company;
 };
 
