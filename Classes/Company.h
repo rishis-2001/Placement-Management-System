@@ -164,7 +164,8 @@ public:
         for (const auto& internship : internships) {
             cout << "\t\t\t\t";
             cout.width(3);
-            cout << "|   " << index++ << " \t  |";
+            cout << "|   " << index << " \t  |";
+            index++;
             cout.width(15);
             cout << internship.get_location() << "\t|";
             cout.width(10);
@@ -205,7 +206,8 @@ public:
         for (const auto& job : jobs) {
             cout << "\t\t\t\t";
             cout.width(3);
-            cout << "|   " << index++ << " \t  |";
+            cout << "|   " << index << " \t  |";
+            index++;
             cout.width(15);
             cout << job.get_location() << "\t|";
             cout.width(10);
