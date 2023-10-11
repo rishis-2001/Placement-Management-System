@@ -6,16 +6,16 @@ class Internship : public Job
 {
 private:
     int program_count;
+    double amount;
+    string location;
+    string type;
+    string role;
 
 public:
-    Internship(int _amount, string &_location, string &_type, string &_role, int _program_count)
-    {
-        amount = _amount;
-        location = _location;
-        type = _type;
-        role = _role;
-        program_count = _program_count;
-    }
+    Internship(int _amount, const string& _location, const string& _type, const string& _role, int _program_count)
+    : amount(_amount), location(_location), type(_type), role(_role), program_count(_program_count) {}
+
+
 
     void set_program_count(int _program_count)
     {
