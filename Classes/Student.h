@@ -93,7 +93,7 @@ class Student{
     {
 
         bool flag = true;
-        string name;
+        string name_c;
         string type; 
         int seats;
         int duration ;
@@ -103,7 +103,7 @@ class Student{
         while (flag)
         {
             cout << "  Enter the program name: ";
-            cin >> name;
+            cin >> name_c;
             cout << "  Enter the program type: ";
             cin >> type;
             cout << "  Enter total number of seats available: ";
@@ -112,7 +112,7 @@ class Student{
             cin >> duration;
             cout << "  Do you want to add more programs? (y/n): ";
             cin >> c;
-            Program *prog = new Program(name, type, seats, duration);
+            Program *prog = new Program(name_c, type, seats, duration);
             programs.push_back(prog);
             if (c == 'n')
             {
