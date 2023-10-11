@@ -167,7 +167,7 @@ void Company_Details_Menu(vector<Company> &Companies){
 }
 
 
-void Company_Menu(vector<Company> &Companies,vector<College> &Colleges,vector <Student> &Students){
+void Company_Menu(vector<Company> &Companies, vector <Student> &Students){
     while(true){
         int choice;
     
