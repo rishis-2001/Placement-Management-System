@@ -39,10 +39,11 @@ void display_students(vector<Student> &Students)
     cout<<"\t\t\t\t-------------------------------------------------"<<endl;
 
     int index = 1;
-    for (auto student : Students)
+    for (auto &student : Students)
     {   cout<<"\t\t\t\t";
         cout.width(3);
-        cout << "|   "<<index++ << " \t    |";
+        cout << "|   "<<index << " \t    |";
+        index++;
         cout.width(15);
         cout << student.name << "\t|";
         cout.width(10);
@@ -72,10 +73,11 @@ void display_companies(vector<Company> &Companies)
     cout << "\t\t\t\t-------------------------------------------------" << endl;
 
     int index = 1;
-    for (auto company : Companies)
+    for (auto &company : Companies)
     {   cout<<"\t\t\t\t";
         cout.width(3);
-        cout << "|   "<<index++ << " \t    |";
+        cout << "|   "<<index << " \t    |";
+        index++;
         cout.width(15);
         cout << company.get_name() << "\t|";
         cout.width(10);
@@ -105,11 +107,12 @@ void display_college_list(vector<College> &Colleges)
      cout << "\t\t\t\t-------------------------------------------------" << endl;
 
     int index = 1;
-    for (auto college : Colleges)
+    for (auto &college : Colleges)
     {   
         cout<<"\t\t\t\t";
         cout.width(3);
-        cout << "|   "<<index++ << " \t    |";
+        cout << "|   "<<index << " \t    |";
+        index++;
         cout.width(15);
         cout << college.get_name() << "\t|";
         cout.width(10);
