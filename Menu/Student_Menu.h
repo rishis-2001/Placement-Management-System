@@ -142,7 +142,8 @@ void student_details_menu(vector<Student> &Students){
 
 void Student_Menu(vector<Student> &Students,vector<Company> &Companies, vector<College> &Colleges){
 
-    int choice = 0,selected_college = 0;
+    int choice = 0;
+    int selected_college = 0;
     while(true){
 
         cout<<"\n  Choose from the following:"<<endl;
