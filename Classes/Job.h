@@ -7,12 +7,10 @@ class Job : public Offer
 {
 private:
     int required_experience;
-
-protected:
     string role;
 
 public:
-    Job()
+    Job() : required_experience(0), role("")
     {
         amount = 0;
         location = "";
@@ -20,13 +18,13 @@ public:
         required_experience = 0;
         role = "";
     }
-    Job(int _amount, string _location, string _type, int _required_experience, string _role)
+
+    Job(int _amount, string &_location, string &_type, int _required_experience, string &_role)
+    : required_experience(_required_experience), role(_role)
     {
         amount = _amount;
         location = _location;
         type = _type;
-        required_experience = _required_experience;
-        role = _role;
     }
 
     void set_required_experience(int _required_experience)
@@ -34,26 +32,24 @@ public:
         required_experience = _required_experience;
     }
 
-    void set_role(string _role)
+    void set_role(string &_role)
     {
         role = _role;
     }
 
-    int get_required_experience()
-    {
+    int get_required_experience() const {
         return required_experience;
     }
 
-    string get_role()
-    {
+    string get_role() const {
         return role;
     }
 
     friend class Company;
-    friend ostream &operator<<(ostream &, Job &);
+    friend ostream &operator<<(ostream &, const Job &);
 };
 
-ostream &operator<<(ostream &out, Job &job)
+ostream &operator<<(ostream &out, const Job &job)
 {
     out << "\n\t\t\t\t\t|| JOB DETAILS ||\n"<< endl;
     out << " Role: " << job.role << endl;
