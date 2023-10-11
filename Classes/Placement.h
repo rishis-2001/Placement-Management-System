@@ -8,15 +8,16 @@ class Placement
     double average;
     double highest;
 
-    int year,total_placed,total_appeared;
+    int year,total_placed;
+    int total_appeared;
+
     public: 
-    Placement(int year,double average, int highest,int total_placed, int total_appeared){
-        this->average = average;
-        this->highest = highest;
-        this->year = year;
-        this->total_placed = total_placed;
-        this->total_appeared = total_appeared;
+    Placement(int year, double average, int highest, int total_placed, int total_appeared)
+    : year(year), average(average), highest(highest), total_placed(total_placed), total_appeared(total_appeared)
+    {
+    // The constructor body is now empty because the members are initialized in the initialization list.
     }
+
 
     void set_average(double _average)
     {
@@ -43,41 +44,35 @@ class Placement
         total_appeared = _total_appeared;
     }
 
-    double get_average()
-    {
+    double get_average() const {
         return average;
     }
 
-    double get_highest()
-    {
+    double get_highest() const {
         return highest;
     }
 
-    int get_total_placed()
-    {
+    int get_total_placed() const {
         return total_placed;
     }
 
-    int get_total_appeared()
-    {
+    int get_total_appeared() const {
         return total_appeared;
     }
 
-    int get_year()
-    {
+    int get_year() const {
         return year;
     }
 
-    void percentage_placed()
-    {
+    void percentage_placed() const {
         double per = (total_placed / total_appeared) * 100;
         cout << "Percentage of Students Placed: " << per << endl;
     }
 
-    friend ostream &operator<<(ostream &out, Placement &p);
+    friend ostream &operator<<(ostream &out, const Placement &p);
     friend class College;
 };
-ostream &operator<<(ostream &out, Placement &p)
+ostream &operator<<(ostream &out, const Placement &p)
 {
     out << "\t|| STUDENT DETAILS ||" << endl;
     out << "Highest Package: " << p.highest << endl;
