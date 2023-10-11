@@ -31,7 +31,7 @@ void tokenize_student(string s,vector<Student> &data){
 
     //Push the tokens to the data
 
-    Student* student = new Student(row[0],row[1],stoi(row[2]),row[3],row[4],stoi(row[5]),stod(row[6]),stoi(row[7]),dummy[rand() % dummy.size()]);
+    auto student = new Student(row[0],row[1],stoi(row[2]),row[3],row[4],stoi(row[5]),stod(row[6]),stoi(row[7]),dummy[rand() % dummy.size()]);
     data.push_back(*student);
 }
 
@@ -49,7 +49,7 @@ void tokenize_job(string s,vector<Job> &data){
     }
 
     //Push the tokens to the data
-    Job* job = new Job(stoi(row[0]),row[1],row[2],stoi(row[3]),row[4]);
+    auto job = new Job(stoi(row[0]),row[1],row[2],stoi(row[3]),row[4]);
     data.push_back(*job);
 }
 
@@ -67,7 +67,7 @@ void tokenize_internship(string s,vector<Internship> &data){
     }
 
     //Push the tokens to the data
-    Internship* internship = new Internship(stoi(row[0]),row[1],row[2],row[3],stoi(row[4]));
+    auto internship = new Internship(stoi(row[0]),row[1],row[2],row[3],stoi(row[4]));
     data.push_back(*internship);
 }
 
@@ -106,7 +106,7 @@ void tokenize_company(string s,vector<Company> &data){
     fin2.close();
 
     //Push the tokens to the data
-    Company* company = new Company(row[0],row[1],row[2],jobs,internships);
+    auto company = new Company(row[0],row[1],row[2],jobs,internships);
     data.push_back(*company);
 }
 
@@ -126,7 +126,7 @@ void tokenize_college(string s,vector<College> &data){
     }
 
     //Push the tokens to the data
-    College* college = new College(row[0],row[1],stoi(row[2]));
+    auto college = new College(row[0],row[1],stoi(row[2]));
     data.push_back(*college);
 }
 
