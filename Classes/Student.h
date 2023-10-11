@@ -136,12 +136,12 @@ class Student{
     }
 
     friend void delete_student(vector<Student> &student, string roll);
-    friend ostream &operator<<(ostream &out, Student &);
+    friend ostream &operator<<(ostream &out, const Student &);
     friend bool operator>(const Student &, const Student &);
     friend void display_students(vector<Student> &Students);
 };
 
-ostream &operator<<(ostream &out, Student &student)
+ostream &operator<<(ostream &out, const Student &student)
 {
     out<<"\t\t\t=================================================================="<<endl;
     out << "\t\t\t\t\t\t|| STUDENT DETAILS ||" << endl<<endl;
