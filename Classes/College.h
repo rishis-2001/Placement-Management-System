@@ -172,7 +172,8 @@ public:
 ostream& operator<<(ostream &out, College &college) {
     cout << "\t\t\t\t\t   || COLLEGE DETAILS ||" << endl;
 
-    out << "  Serial No." << college.index++ << endl;
+    out << "  Serial No." << college.index << endl;
+    college.index++;
     out << "  College Name: " << college.college_name << endl;
     out << "  Location: " << college.college_location << endl;
     out << "  Companies that visited: " << college.college_name << ": " << endl;
@@ -180,7 +181,8 @@ ostream& operator<<(ostream &out, College &college) {
     int sr_no = 1;
 
     for (const string &item : college.college_companies) {
-        cout << "   " << sr_no++ << ". " << item << endl;
+        cout << "   " << sr_no << ". " << item << endl;
+        sr_no++;
     }
 
     return out;
