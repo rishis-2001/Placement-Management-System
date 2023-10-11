@@ -1,4 +1,3 @@
-// College (name, location, placements, students)
 #ifndef COLLEGE_H
 #define COLLEGE_H
 
@@ -35,7 +34,7 @@ public:
         };
     }
 
-    string get_name() {
+    string const get_name() {
         return college_name;
     }
 
@@ -51,11 +50,11 @@ public:
         students = _students;
     }
 
-    int get_students() {
+    int const get_students() {
         return students;
     }
 
-    string get_location() {
+    string const get_location() {
         return college_location;
     }
 
