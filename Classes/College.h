@@ -60,8 +60,12 @@ public:
     }
 
     void add_placement_stats() {
-        double average, highest;
-        int year, total_placed, total_appeared;
+        double average;
+        double highest;
+        
+        int year;
+        int total_placed;
+        int total_appeared;
 
         cout << "Enter the year of which you want to enter the placement stats: ";
         cin >> year;
