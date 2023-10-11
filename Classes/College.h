@@ -62,7 +62,7 @@ public:
     void add_placement_stats() {
         double average;
         double highest;
-        
+
         int year;
         int total_placed;
         int total_appeared;
@@ -148,7 +148,10 @@ public:
     };
 
     void placement_history() {
-        sort(placements.begin(), placements.end(), less_than_key());
+        sort(placements.begin(), placements.end(), less_than_key()); // Sorting the vector
+
+        // Now, assign the sorted result back to the vector
+        placements = vector<Placement>(placements.begin(), placements.end());
 
         cout << endl << "\t\t\t\t\t      || PLACEMENT HISTORY ||\n" << endl;
         cout << "\t======================================================================================================================" << endl << endl;
