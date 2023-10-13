@@ -31,7 +31,7 @@ void Main_Menu(vector<Student> &students, vector<College> &colleges,vector<Compa
                 display_line(1);
                 cout<<endl; 
                 display_role_text(0,1,0);
-                Company_Menu(companies,colleges,students);
+                Company_Menu(companies,students);
                 break;
             case 3:
                 display_line(1);
